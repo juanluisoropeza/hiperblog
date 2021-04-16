@@ -11,3 +11,5 @@ git show archivo.extension (cambios que han existido en un archivo)
 
 git commit (sin mensaje, escribimos el mensaje, y para salir del vim, apretamos Esc + shift + z + z)
 para escribir texto en vim, presionamos Esc + i
+
+Si queremos agregar comentarios en VIM, la primera linea seria el titulo y si das doble enter, el resto seria la descripcion de ese commit, y las lineas con # son comentarios, y no se pueden enviar commits vacios de mensajes
