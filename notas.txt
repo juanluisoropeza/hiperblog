@@ -10,3 +10,4 @@ git log nombre_archivo.extension (muestra el historico del archivo)
 git show archivo.extension (cambios que han existido en un archivo)
 
 git commit (sin mensaje, escribimos el mensaje, y para salir del vim, apretamos Esc + shift + z + z)
+para escribir texto en vim, presionamos Esc + i
