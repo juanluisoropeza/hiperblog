@@ -1,0 +1,1 @@
+git rm --cached nombre_archivo.extencion -> se usa cuando por ejm hacemos un add de un archivo y cuando esta en verde queremos sacarlo de los adds
