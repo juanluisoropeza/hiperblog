@@ -1,1 +1,8 @@
 git rm --cached nombre_archivo.extencion -> se usa cuando por ejm hacemos un add de un archivo y cuando esta en verde queremos sacarlo de los adds
+
+git config --list (configuracion por defecto)
+git config --list --show-origin (ver donde estan las configuraciones guardadas)
+git config --global user.name (configuracion del usuario de git)
+git config --global user.email (configuracion del email de git)
+
+git log nombre_archivo.extension (muestra el historico del archivo)
