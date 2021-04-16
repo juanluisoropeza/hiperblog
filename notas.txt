@@ -13,3 +13,6 @@ git commit (sin mensaje, escribimos el mensaje, y para salir del vim, apretamos 
 para escribir texto en vim, presionamos Esc + i
 
 Si queremos agregar comentarios en VIM, la primera linea seria el titulo y si das doble enter, el resto seria la descripcion de ese commit, y las lineas con # son comentarios, y no se pueden enviar commits vacios de mensajes
+
+git diff (para ver las diferencias entre un cmabio y otro, para esto hay q copiar los hash que te salen cuando haces un git log al lado de la palabra commit. Se compara entre versiones, por ende debes ingresar dos hash o codigos de commit para poder compararlos, ejm git diff 9014c67cd2587fe530ba1948887fd454144786e4 d90c2a4df958f3c960773ebd77060e26368d8a81, donde el primer hash es el ultimo cambio y el segundo hash fue el primer commit para este archivo, si cambias el orden y colocas el hash mas viejo de primero y el hash mas reciente de ultimo, cambia la manera en q se muestran los cambios, y te va mostrar en verde los cambios mas recientes y en rojo lo q estaba antes en el commit viejo )
+
