@@ -1,18 +1,23 @@
-git rm --cached nombre_archivo.extencion -> se usa cuando por ejm hacemos un add de un archivo y cuando esta en verde queremos sacarlo de los adds
+- git rm --cached nombre_archivo.extencion -> se usa cuando por ejm hacemos un add de un archivo y cuando esta en verde queremos sacarlo de los adds- 
 
-git config --list (configuracion por defecto)
-git config --list --show-origin (ver donde estan las configuraciones guardadas)
-git config --global user.name (configuracion del usuario de git)
-git config --global user.email (configuracion del email de git)
+- git config --list (configuracion por defecto)
+- git config --list --show-origin (ver donde estan las configuraciones guardadas)
+- git config --global user.name (configuracion del usuario de git)
+- git config --global user.email (configuracion del email de git)
 
-git log nombre_archivo.extension (muestra el historico del archivo)
+- git log nombre_archivo.extension (muestra el historico del archivo)
 
-git show archivo.extension (cambios que han existido en un archivo)
+- git show archivo.extension (cambios que han existido en un archivo)
 
-git commit (sin mensaje, escribimos el mensaje, y para salir del vim, apretamos Esc + shift + z + z)
+- git commit (sin mensaje, escribimos el mensaje, y para salir del vim, apretamos Esc + shift + z + z)
 para escribir texto en vim, presionamos Esc + i
 
-Si queremos agregar comentarios en VIM, la primera linea seria el titulo y si das doble enter, el resto seria la descripcion de ese commit, y las lineas con # son comentarios, y no se pueden enviar commits vacios de mensajes
+- Si queremos agregar comentarios en VIM, la primera linea seria el titulo y si das doble enter, el resto seria la descripcion de ese commit, y las lineas con # son comentarios, y no se pueden enviar commits vacios de mensajes
 
-git diff (para ver las diferencias entre un cmabio y otro, para esto hay q copiar los hash que te salen cuando haces un git log al lado de la palabra commit. Se compara entre versiones, por ende debes ingresar dos hash o codigos de commit para poder compararlos, ejm git diff 9014c67cd2587fe530ba1948887fd454144786e4 d90c2a4df958f3c960773ebd77060e26368d8a81, donde el primer hash es el ultimo cambio y el segundo hash fue el primer commit para este archivo, si cambias el orden y colocas el hash mas viejo de primero y el hash mas reciente de ultimo, cambia la manera en q se muestran los cambios, y te va mostrar en verde los cambios mas recientes y en rojo lo q estaba antes en el commit viejo )
+- git diff (para ver las diferencias entre un cmabio y otro, para esto hay q copiar los hash que te salen cuando haces un git log al lado de la palabra commit. Se compara entre versiones, por ende debes ingresar dos hash o codigos de commit para poder compararlos, ejm git diff 9014c67cd2587fe530ba1948887fd454144786e4 d90c2a4df958f3c960773ebd77060e26368d8a81, donde el primer hash es el ultimo cambio y el segundo hash fue el primer commit para este archivo, si cambias el orden y colocas el hash mas viejo de primero y el hash mas reciente de ultimo, cambia la manera en q se muestran los cambios, y te va mostrar en verde los cambios mas recientes y en rojo lo q estaba antes en el commit viejo )
 
+- Branches:
+    * git reset, volvemos a una version anterior
+        + git reset id_del_commit --soft ó --hard 
+            ~ soft (volvemos al estado del commit, pero si hay algo en el staging sigue ahi, es decir, si se hizo un cmabio y se hizo git add,e ste no se elimina).
+            ~ hard (todo vuelve al estado que tenia el commit)
