@@ -38,4 +38,8 @@ para escribir texto en vim, presionamos Esc + i
 - git commit -am "mensaje", haces un git add y git commit a la vez, pero para hacerlo ya debiste haber hecho add de este archivo anteriormente.
 
 - merge:
-    - desde el master, hacemos un git merge rama_a_mergear 
+    * siempre se hace desde la rama donde estoy, por eso debe hacerse desde el master, hacemos un git merge rama_a_mergear
+    * si despues de mergear lo q se commiteo desde una nombre_rama a master, vas a la rama nombre_rama y haces un merge de lo que esta en master, y te vas a traer los cambios ya fusionados que estan en master al branch nombre_rama.
+
+- conflictos
+
