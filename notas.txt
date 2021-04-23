@@ -42,4 +42,5 @@ para escribir texto en vim, presionamos Esc + i
     * si despues de mergear lo q se commiteo desde una nombre_rama a master, vas a la rama nombre_rama y haces un merge de lo que esta en master, y te vas a traer los cambios ya fusionados que estan en master al branch nombre_rama.
 
 - conflictos
-
+    * <<<<<<< HEAD -> te dice que el codigo en esa seccion, es como lo tienes en la rama actual, es decir en MASTER, si estas haciendo el merge de otra branch hacia master.
+    * >>>>>>> cabecera -> quiere decir que el codigo encima de esto, es lo que tienes en la rama que quieres mergear, en este caso nombre_rama, que quieres fusionar hacia master.
