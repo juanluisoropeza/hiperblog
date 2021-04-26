@@ -44,3 +44,12 @@ para escribir texto en vim, presionamos Esc + i
 - conflictos
     * <<<<<<< HEAD -> te dice que el codigo en esa seccion, es como lo tienes en la rama actual, es decir en MASTER, si estas haciendo el merge de otra branch hacia master.
     * >>>>>>> cabecera -> quiere decir que el codigo encima de esto, es lo que tienes en la rama que quieres mergear, en este caso nombre_rama, que quieres fusionar hacia master.
+
+- github
+    * copiamos el http del repositorio
+    * le decimos a git que vamos a conectarnos con un repositorio remoto
+        + git remote add origin link_http_del_repositorio
+            ~ git remote -> vemos origin que es donde esta conectado el repositorio remoto
+            ~ git remote -v -> nos muestra los repositorios para fetch (traernos codigo) y push (enviar codigo)
+            ~ git pull origin main -> primero te traes todo lo que esta en el repositorio remoto
+            ~ git push origin main -> al conectar con nuestro repositorio remoto, solo tenemos que enviar el codigo local
