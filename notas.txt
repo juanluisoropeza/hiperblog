@@ -38,19 +38,72 @@ para escribir texto en vim, presionamos Esc + i
 - git commit -am "mensaje", haces un git add y git commit a la vez, pero para hacerlo ya debiste haber hecho add de este archivo anteriormente.
 
 - merge:
-    * siempre se hace desde la rama donde estoy, por eso debe hacerse desde el master, hacemos un git merge rama_a_mergear
-    * si despues de mergear lo q se commiteo desde una nombre_rama a master, vas a la rama nombre_rama y haces un merge de lo que esta en master, y te vas a traer los cambios ya fusionados que estan en master al branch nombre_rama.
+  * siempre se hace desde la rama donde estoy, por eso debe hacerse desde el master, hacemos un git merge rama_a_mergear
+  * si despues de mergear lo q se commiteo desde una nombre_rama a master, vas a la rama nombre_rama y haces un merge de lo que esta en master, y te vas a traer los cambios ya fusionados que estan en master al branch nombre_rama.
 
 - conflictos
-    * <<<<<<< HEAD -> te dice que el codigo en esa seccion, es como lo tienes en la rama actual, es decir en MASTER, si estas haciendo el merge de otra branch hacia master.
-    * >>>>>>> cabecera -> quiere decir que el codigo encima de esto, es lo que tienes en la rama que quieres mergear, en este caso nombre_rama, que quieres fusionar hacia master.
+  * <<<<<<< HEAD -> te dice que el codigo en esa seccion, es como lo tienes en la rama actual, es decir en MASTER, si estas haciendo el merge de otra branch hacia master.
+  * >>>>>>> cabecera -> quiere decir que el codigo encima de esto, es lo que tienes en la rama que quieres mergear, en este caso nombre_rama, que quieres fusionar hacia master.
 
 - github
-    * copiamos el http del repositorio
-    * le decimos a git que vamos a conectarnos con un repositorio remoto
-        + git remote add origin link_http_del_repositorio
-            ~ git remote -> vemos origin que es donde esta conectado el repositorio remoto
-            ~ git remote -v -> nos muestra los repositorios para fetch (traernos codigo) y push (enviar codigo)
-            ~ git pull origin main -> primero te traes todo lo que esta en el repositorio remoto
-            ~ git push origin main -> al conectar con nuestro repositorio remoto, solo tenemos que enviar el codigo local
-            ~ git pull origin master --allow-unrelated-histories -> cuando presente el error "fatal: refusing to merge enrelated histories" con esto forzamos a hacer pull del remoto fusionandola con la rama local, caso super aislado y como se crean primeros archivos.
+  * copiamos el http del repositorio
+  * le decimos a git que vamos a conectarnos con un repositorio remoto
+    + git remote add origin link_http_del_repositorio
+      ~ git remote -> vemos origin que es donde esta conectado el repositorio remoto
+      ~ git remote -v -> nos muestra los repositorios para fetch (traernos codigo) y push (enviar codigo)
+      ~ git pull origin main -> primero te traes todo lo que esta en el repositorio remoto
+      ~ git push origin main -> al conectar con nuestro repositorio remoto, solo tenemos que enviar el codigo local
+      ~ git pull origin master --allow-unrelated-histories -> cuando presente el error "fatal: refusing to merge enrelated histories" con esto forzamos a hacer pull del remoto fusionandola con la rama local, caso super aislado y como se crean primeros archivos.
+
+- LLaves publicas y privadas
+  * Configurar llaves SSH local
+    + en entorno local se crea una llave privada y una llave publica
+    + luego se envia a github la llave publica
+    + se conecta por un nuevo protocolo, en vez de https, se conecta por SSH (Secure Shell)
+    + Automaticamente Github te envia su propia llave publica a tu entorno local, ambos tienen sus llaves publicas y ya estan conectados via SSH, y por ende conectarse sin logearse constantemente
+    + para crear la llave, hay q hacerlo en el home de tu computador, seria el lugar desde donde normalmente guardas tus proyectos, en windows suele ser en el disco C:/Users/Tu_Usuario, en mac, /Users/Tu_Usuario.
+    + para ver la configuracion de git en local, ejecutas en la terminal el comando git config -l para ver tus datos
+    + para cambiar el email de tu cuenta, git config --global user.email "tu_email@correo.com"
+    + Creamos la llave SSH
+      ~ ssh-keygen -t rsa -b 4096 -C "tu_email@correo.com"
+        # el correo debe ser el que tienes registrado en el repositorio, en este caso github
+        # -t indica el algoritmo, q es el rsa, 
+        # -b es lo complejidad de la llave
+        # -C es el correo electronico al que se va a conectar el repo
+      ~ te deja un mensaje en consola de que esta generandose la llave public/privada, y te pide un password:
+        # Ejm: Enter file in which to save the key (/Users/juanluisoropeza/.ssh/id_rsa):
+        # como se ve en el caso de mac se crea la carpeta .ssh en el directorio con tu nombre de usuario
+      ~ luego te pide un passphrase, password con espacios, clave adicional de texto para agregarle a tu llave, puedes agregarla o no.
+      ~ y listo se generaron las claves.
+    + hay que llevar la llave a github, (en mac hay q llevar la clave al entorno)
+      ~ linux/windows hay q revisar que el servidor de llaves ssh este prendido.
+        # eval $(ssh-agent -s)
+        # la respuesta en consola, seria algo como: Agent pid 1234
+        # agregamos la llave al servidor
+          > se ejecuta el comendo: ~/.ssh
+          > ls -al y vemos las llaves creadas
+          > ssh-add ~/.ssh/id_rsa, respuesta: identity added: ruta_de_la_clave
+      ~ mac
+        # se crea una carpeta dentro del directorio .ssh que se creo en el home, con el nombre known_hosts
+        # si se hace un: cat id_rsa.pub abres el contenido de tu llave publica
+        # si haces: cat known_hosts, tambien te sale un monton de codigo ilegible
+        # hay q evaluar si esta corriendo el ss-agent
+          ~ eval "$(ssh-agent -s)" -> y la respuesta seria: Agent pid 1234
+        # si se usa una version reciente del sistema operativo MAC hay q editar o crear un archivo llamado config.
+        # para ver los archivos q estan en la carpeta .ssh, ingresamos el comando ls -al, por lo general no existe este archivo por que estamos creando la clave nueva, osea no teniamos clave ssh anteriormente.
+          ~ vim config y se crea el archivo
+          ~ presionamos Esc + i para escribir el archivo de texto
+          ~ ingresamos el siguiente codigo tal cual (incluyendo los tags):
+            Host *
+              AddKeysToAgent yes
+              UseKeychain yes
+              IdentityFile ~/.ssh/id_rsa
+          ~ guardamos usando Esc + shift + zz
+          ~ para ver el contenido del archivo ejecutamos, cat config, y sale el texto que escribimos.
+        # ejecutamos ssh-add -K ~/.ssh/id_rsa, respuesta: identity added: ruta_de_la_clave
+          ~ la -K es para la keygen una clave q necesita mac
+
+
+
+
+
