@@ -123,6 +123,34 @@ para escribir texto en vim, presionamos Esc + i
       ~ Luego volvemos a escribir git pull origin master, y de haber cambios, te va a traer los cambios a tu repo local.
       ~ para subir nuevos cambios, hacemos un commit, y antes de subirlos hacemos un pull de origin master.
 
+- Tags y Versiones en git y github
+  * ver el historial de nuestro proyecto
+    + git log
+    + git log --all (todos los cambios historicos)
+    + git log --all --graph (se ve graficamente la union de mezcla de ramas o branchs)
+    + git log --all --graph --decorate --oneline (muestra todo comprimido y grafico)
+  * Agregar un alias a un comando
+    + alias arbolito=git log --all --graph --decorate --oneline
+    + para ejecutarlo solo ejecutamos en la terminal el alias que agregamos, en este caso: arbolito + enter 
+  * Crear un tag
+    + lo primero es copiar un hash del commit, esto es mostrado con el git log
+      ~ git tag -a v0.1 -m "resultado de las primeras clases del curso" nro_hash
+      ~ git tag -> lista de todos los tags
+      ~ git show-ref --tags -> muestra el tag asignado al commit en detalle
+    + enviar tag a github (repo remoto)
+      ~ git pull origin main (o master, dependiendo del repo).
+      ~ git push origin --tags
+    + Borrar Tags
+      ~ git tag -d nombre_tag
+      ~ git pull origin main
+      ~ git push origin --tags
+      ~ NOTA: automaticamente no se borra en el repo remoto (github), esto es por que los tags pueden utilizarse como releases, para borrarlo en el repo remoto, hay que hacer otro paso:
+      ~ git push origin :refs/tags/nombre_tag
+
+- Branches (Ramas)
+  
+
+
 
 
 
