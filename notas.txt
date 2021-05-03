@@ -56,6 +56,7 @@ para escribir texto en vim, presionamos Esc + i
       ~ git pull origin master --allow-unrelated-histories -> cuando presente el error "fatal: refusing to merge enrelated histories" con esto forzamos a hacer pull del remoto fusionandola con la rama local, caso super aislado y como se crean primeros archivos.
 
 - LLaves publicas y privadas
+  * Antes que nada hay que ubicarse en el home del computador, debes abrir el bash de git (terminal), y ubicarte en la carpeta raiz, en el caso de windows seria c:/Users/nombre_usuario
   * Configurar llaves SSH local
     + en entorno local se crea una llave privada y una llave publica
     + luego se envia a github la llave publica
@@ -65,11 +66,13 @@ para escribir texto en vim, presionamos Esc + i
     + para ver la configuracion de git en local, ejecutas en la terminal el comando git config -l para ver tus datos
     + para cambiar el email de tu cuenta, git config --global user.email "tu_email@correo.com"
     + Creamos la llave SSH
-      ~ ssh-keygen -t rsa -b 4096 -C "tu_email@correo.com"
+      ~ ssh-keygen -t rsa -b 4096 -C "juanloropeza@gmail.com" enter
         # el correo debe ser el que tienes registrado en el repositorio, en este caso github
         # -t indica el algoritmo, q es el rsa, 
         # -b es lo complejidad de la llave
         # -C es el correo electronico al que se va a conectar el repo
+      ~ te dice donde va generar la clave, siempre dar enter de nuevo.
+      ~ Pide un phassphrase, por lo general y seguridad lo mejor es colocarla
       ~ te deja un mensaje en consola de que esta generandose la llave public/privada, y te pide un password:
         # Ejm: Enter file in which to save the key (/Users/juanluisoropeza/.ssh/id_rsa):
         # como se ve en el caso de mac se crea la carpeta .ssh en el directorio con tu nombre de usuario
@@ -102,7 +105,21 @@ para escribir texto en vim, presionamos Esc + i
           ~ para ver el contenido del archivo ejecutamos, cat config, y sale el texto que escribimos.
         # ejecutamos ssh-add -K ~/.ssh/id_rsa, respuesta: identity added: ruta_de_la_clave
           ~ la -K es para la keygen una clave q necesita mac
-
+    + Conexion a github con SSH
+      ~ hay que crear una llave publica y una llave privada por cada conexion (maquina) que conectes a tu repositorio.
+      ~ copiamos nuestra clave publica del archivo id_rsa.pub
+      ~ vamos a github, click en el menu arriba a la derecha, y click en settings, luego click en el menu izquierdo en "SSH and GPG Keys".
+      ~ Click en New SSH Key
+        # Se agraga un titulo, y se pega la clave publico en el textarea con label "KEY"
+        # Te pide contraseña de github para guardar, la ingresas y listo, hemos agregado nuestra maquina a la conexion con SSH.
+      ~ Vamos al repositorio que queremos usar con ssh, en el caso del curso, el repo Hiperblog y copiamos en el boton para clonar, la direccion ssh del repo.
+      ~ En la terminal vamos a la carpeta donde tenemos el proyecto para conectarnos a traves de ssh al repo en github
+      ~ git remote -v (nos muestra la url del repositorio), vamos a cambiar esa url
+      ~ git remote set-url origin git@github.com:juanluisoropeza/hiperblog.git
+        # basicamente cambiamos la URL del origin que configuramos antes por la URL que acabamos de copiar en el repositorio en el apartado SSH. Esto habilita la conexion ssh y ya podemostrabajar.
+      ~ Lo primero que se hace antes de hacer un commit, es traernos la ultima version de lo que tenemos en el repo remoto.
+      ~ hacemos un git pull en la terminal, y en pantalla va a aparecer una validacion de si quiere autorizar la conexion con el RSA Key. solo hay que escribir yes y darle enter.
+      ~ Luego pide la passphrase que creamos al configurar la conexion ssh, se ingresa y se de enter, y listo, debe aparecer un mensaje como "Already up to date".
 
 
 
