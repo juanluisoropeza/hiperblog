@@ -148,7 +148,9 @@ para escribir texto en vim, presionamos Esc + i
       ~ git push origin :refs/tags/nombre_tag
 
 - Branches (Ramas)
-  
+  * git show-branch -> nos muestra las ramas existentes y su historia
+  * git show-branch --all -> muestra lo mismo pero con mas detalle
+  * gitk -> abre la historia visualmente del repo
 
 
 
