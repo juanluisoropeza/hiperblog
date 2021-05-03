@@ -66,7 +66,7 @@ para escribir texto en vim, presionamos Esc + i
     + para ver la configuracion de git en local, ejecutas en la terminal el comando git config -l para ver tus datos
     + para cambiar el email de tu cuenta, git config --global user.email "tu_email@correo.com"
     + Creamos la llave SSH
-      ~ ssh-keygen -t rsa -b 4096 -C "juanloropeza@gmail.com" enter
+      ~ ssh-keygen -t rsa -b 4096 -C "tucorreo@correo.com" enter
         # el correo debe ser el que tienes registrado en el repositorio, en este caso github
         # -t indica el algoritmo, q es el rsa, 
         # -b es lo complejidad de la llave
@@ -74,7 +74,7 @@ para escribir texto en vim, presionamos Esc + i
       ~ te dice donde va generar la clave, siempre dar enter de nuevo.
       ~ Pide un phassphrase, por lo general y seguridad lo mejor es colocarla
       ~ te deja un mensaje en consola de que esta generandose la llave public/privada, y te pide un password:
-        # Ejm: Enter file in which to save the key (/Users/juanluisoropeza/.ssh/id_rsa):
+        # Ejm: Enter file in which to save the key (/Users/usuario/.ssh/id_rsa):
         # como se ve en el caso de mac se crea la carpeta .ssh en el directorio con tu nombre de usuario
       ~ luego te pide un passphrase, password con espacios, clave adicional de texto para agregarle a tu llave, puedes agregarla o no.
       ~ y listo se generaron las claves.
@@ -120,6 +120,8 @@ para escribir texto en vim, presionamos Esc + i
       ~ Lo primero que se hace antes de hacer un commit, es traernos la ultima version de lo que tenemos en el repo remoto.
       ~ hacemos un git pull en la terminal, y en pantalla va a aparecer una validacion de si quiere autorizar la conexion con el RSA Key. solo hay que escribir yes y darle enter.
       ~ Luego pide la passphrase que creamos al configurar la conexion ssh, se ingresa y se de enter, y listo, debe aparecer un mensaje como "Already up to date".
+      ~ Luego volvemos a escribir git pull origin master, y de haber cambios, te va a traer los cambios a tu repo local.
+      ~ para subir nuevos cambios, hacemos un commit, y antes de subirlos hacemos un pull de origin master.
 
 
 
