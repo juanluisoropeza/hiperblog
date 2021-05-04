@@ -152,6 +152,8 @@ para escribir texto en vim, presionamos Esc + i
   * git show-branch --all -> muestra lo mismo pero con mas detalle
   * gitk -> abre la historia visualmente del repo
   * git push origin rama y se suben los cambios a de la rama en local, al repositorio remoto
+  * Para agregar colaboradores a un repositorio github, se debe ir a los settings del repo, luego a Collaborators en el sidebar, y se debe agregar el correo del colaborador o su nombre de usuario.
+
 
 
 
