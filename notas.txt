@@ -148,7 +148,7 @@ para escribir texto en vim, presionamos Esc + i
       ~ git push origin :refs/tags/nombre_tag
 
 - Branches (Ramas)
-  
+  * git push origin rama y se suben los cambios a de la rama en local, al repositorio remoto
 
 
 
