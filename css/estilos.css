@@ -9,7 +9,7 @@ body {
 
 #container {
     width: 70%;
-    padding: 1em;
+    padding: 0;
     text-align: left;
     border: 1px solid #DDD;
     margin: 0 auto;
@@ -29,8 +29,19 @@ body {
     text-transform: capitalize;
 }
 
+#post {
+    padding: 1em;
+}
+
 #cabecera #tagline {
     font-size: 0.8em;
     font-weight: normal;
     padding: 0 0 0 1em;
+}
+
+#footer {
+    background: #777;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
 }
