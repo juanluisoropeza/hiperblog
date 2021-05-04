@@ -151,6 +151,7 @@ para escribir texto en vim, presionamos Esc + i
   * git show-branch -> nos muestra las ramas existentes y su historia
   * git show-branch --all -> muestra lo mismo pero con mas detalle
   * gitk -> abre la historia visualmente del repo
+  * git push origin rama y se suben los cambios a de la rama en local, al repositorio remoto
 
 
 
