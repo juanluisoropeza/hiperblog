@@ -156,7 +156,13 @@ para escribir texto en vim, presionamos Esc + i
   * si despues de hacer un pull, se trae cambios desde master o main, que hizo algun otro programador, y hacemos un got log --stat veremos el detalle en los commits subidos.
   
 - Pull Request -> es un estado intermedio antes de enviar el merge.
-  * 
+  * para solicitar cambios en los PR se debe entrar en los commits y ver los comits para en el menu desplegable de "Review changes" seleccionar "Request changes" y dejar un comentario.
+  * los autores no pueden solicitar cambios (Request Changes en los PR).
+  * luego de hacer cambios, se van al commit, se comenta el PR y la solicitud de cambios fue realizado.
+  * Se revisan los cambios en los commits del PR, se comenta y se selecciona "approve", esto lo hace el code reviewer.
+  * El encargado de hacer el merge, da click en el boton "Merge Pull Request" y sale una bandeja de comentarios donde se puede dejar un mensaje y luego pulsar el boton "Confirm merge" para que todo se fusione.
+  * Una vez mergeado todo, aparece la confirmacion del merge, y ademas un boton "delete branch" para eliminar la rama o el branch desde donde se creo el Pull Request.
+  
 
 
 
