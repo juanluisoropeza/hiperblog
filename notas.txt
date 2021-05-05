@@ -155,7 +155,8 @@ para escribir texto en vim, presionamos Esc + i
   * Para agregar colaboradores a un repositorio github, se debe ir a los settings del repo, luego a Collaborators en el sidebar, y se debe agregar el correo del colaborador o su nombre de usuario.
   * si despues de hacer un pull, se trae cambios desde master o main, que hizo algun otro programador, y hacemos un got log --stat veremos el detalle en los commits subidos.
   
-
+- Pull Request -> es un estado intermedio antes de enviar el merge.
+  * 
 
 
 
