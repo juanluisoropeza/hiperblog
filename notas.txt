@@ -163,6 +163,33 @@ para escribir texto en vim, presionamos Esc + i
   * El encargado de hacer el merge, da click en el boton "Merge Pull Request" y sale una bandeja de comentarios donde se puede dejar un mensaje y luego pulsar el boton "Confirm merge" para que todo se fusione.
   * Una vez mergeado todo, aparece la confirmacion del merge, y ademas un boton "delete branch" para eliminar la rama o el branch desde donde se creo el Pull Request.
   
+- Fork (Cuando alguien quiere colaborar con un proyecto en github pero no es colaborador [no puede hacer push])
+  * un usuario que no es colaborador en un proyeto no puede hacer ramas, ni push, ni pull request.
+  * para colaborar en un proyecto en el que no se es colaborador, el primer paso es darle en github a la opcion "watch", para que te lleguen notificaciones cuando hayan cambios.
+    + watch
+    + star
+    + fork (tomar una copia del estado actual del proyecto y clonarlo [solo se hace con proyectos publicos] guarda una copia del proyecto en tus repositorios)
+      # git clone al proyecto y lo traes a tu local para realizar cambios, todos los cambios que hagan se subiran a esa copia que hiciste en tu repo
+      # para mergear el proyecto desde mi repo al repo original, vamos a pull Request
+        > se van a comparar los cambios y github te pide a selecciones las ramas a las que vas a solicitar el PR, por ejm repoOriginal/master <- tuRepo/master
+        > click en el boton create pull request
+        > dejar un mensaje y click en el create pull request
+        > el dueño del repositorio, va a recibir la solicitud del PR en su repositorio, incluso le envia un correo avisando.
+        > puede revisar los commits y los cambios para comentar o ver los cambios
+        > click en review changes, seleccionar (si fuera el caso) la opcion approve y dejar algun comentario, y click en submit review.
+        > click en merge pull request. Y luego en Confirm Merge.
+      # todos los cambios que se hagan, deben bajarse haciendo pull del origin master.
+        > para el repositorio que ha decidido hacer fork, apenas hayan cambios nuevos en el repositorio original, dentro del proyecto clonado en github, van a salir avisos de que se tienen commits atrasados.
+        > se va a crear otra fuente para hacer pull.
+        > si se ejecuta en consola git remote -v ves el repo remoto al q estas conectado, deberia aparecerte el repo que se creo con el folk en tus repositorios.
+        > se debe crear una rama que traiga los cambios desde el repo original, para esto, vas al proyecto original en github y copiamos el link del proyecto en el boton que se usa para hacer clone. 
+        > ejecutamos, git remote add upstream + la url nueva (upstream es opcional, puede ser la palabra que prefieras, pero el standard es upstream)
+        > ejecutamos, git remote -v, asi vemos las conexiones que tenemos y van a salir las conexiones origin a nuestro repo, y la conexion upstream al repo original.
+        > ejectutamos, git pull upstream master, y asi nos traemos los cambios hechos en el repo original.
+        > hacemos un git commit -am "fusionamos master del repo original con el master de mi repo personal que a su vez es un folk viejo del repo original"
+        > git push origin master.
+  
+- Deployment 
 
 
 
