@@ -190,6 +190,16 @@ para escribir texto en vim, presionamos Esc + i
         > git push origin master.
   
 - Deployment 
+  * se copia la url del proyecto en donde esta el boton clone.
+  * desde la terminal se clona el proyecto en el servidor.
+  * cuando hayan cambios, hacemos un pull.
+  * travis ci. (conecta ramas de github a servidores).
+
+- ReadMe.md (md = mark down)
+  * Admite HTML
+  * Tambien admite Mark Down (el codigo q comienza los titulos con #)
+  * https://pandao.github.io/editor.md/en.html aca se puede editar online un readme
+
 
 
 
