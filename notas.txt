@@ -200,6 +200,21 @@ para escribir texto en vim, presionamos Esc + i
   * Tambien admite Mark Down (el codigo q comienza los titulos con #)
   * https://pandao.github.io/editor.md/en.html aca se puede editar online un readme
 
+- Github Pages
+  * El repositorio debe ser publico
+  * Debes tener en el repo un index.html para poder mostrar una pagina de inicio.
+  * Debes ingresar en el navegador en la direccion: tu_Usuario.github.io, por defecto te va salir un 404 porque faltan un par de pasos.
+  * Hay que configurar que el repo sea el que carga github pages.
+  * En el repo que queremos dejar por defecto, para que lo tome el github pages, debemos hacer lo siguiente:
+    + Vamos a settings dentro del repositorio.
+    + En la seccion Github Pages, y en la opcion Sources, seleccionamos la rama que queremos de referencia para mostrar su contenido en la url anteriormente descrita. (casi siempre es la rama main, o main branch)
+  * Una vez listo, solo tienes q ir al navegador web y ingresar la url: tu_usuario.github.io/tu_repositorio/ -> para el ejemplo del curso fue: https://juanluisoropeza.github.io/pages/
+  * Para que el proyecto cargue en la raiz de la URL:
+    + Debes cambiar el nombre del repositorio que quieres tener como index o en la url raiz a: tu_usario.github.io
+    + Para el proyecto Hiperblog, hacemos los mismos pasos (menos el que cree por defecto), y luego entramos a https://juanluisoropeza.github.io/hiperblog/blogspot.html y listo, tenemos nuestro hiperblog en linea.
+
+
+
 
 
 
