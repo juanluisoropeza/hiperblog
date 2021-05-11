@@ -213,7 +213,8 @@ para escribir texto en vim, presionamos Esc + i
     + Debes cambiar el nombre del repositorio que quieres tener como index o en la url raiz a: tu_usario.github.io
     + Para el proyecto Hiperblog, hacemos los mismos pasos (menos el que cree por defecto), y luego entramos a https://juanluisoropeza.github.io/hiperblog/blogspot.html y listo, tenemos nuestro hiperblog en linea.
 
-
+- Rebase: tomar una rama entera y pegarla en la rama maestra (MUY MALA PRACTICA PARA REPOSITORIOS REMOTOS, SOLO HACERLO EN RAMAS LOCALES).
+  * 
 
 
 
