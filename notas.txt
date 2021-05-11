@@ -214,7 +214,14 @@ para escribir texto en vim, presionamos Esc + i
     + Para el proyecto Hiperblog, hacemos los mismos pasos (menos el que cree por defecto), y luego entramos a https://juanluisoropeza.github.io/hiperblog/blogspot.html y listo, tenemos nuestro hiperblog en linea.
 
 - Rebase: tomar una rama entera y pegarla en la rama maestra (MUY MALA PRACTICA PARA REPOSITORIOS REMOTOS, SOLO HACERLO EN RAMAS LOCALES).
+  * estando en la rama experimento, debes pegarte a la rama principal (main o master).
+    + git rebase master (o main)
+  * pega EN LA RAMA experimento, el contenido commiteado en esta rama junto con el contenido que tiene la rama principal (primero lo q tiene la rama experimento y despues lo q tiene la principal).
+  * Es una mala practica por que cambia la historia de donde arranco el branch experimento, pero es util si el cambio se hace en una rama local.
+  * en la rama principal (main o master), si quieres mergear lo que tienes en experimento, despues de fusionarlo con master, se hace un git rebase experimento (primero se le hace rebase a la rama experimento y despues a la principal)
   * 
+
+
 
 
 
