@@ -219,8 +219,28 @@ para escribir texto en vim, presionamos Esc + i
   * pega EN LA RAMA experimento, el contenido commiteado en esta rama junto con el contenido que tiene la rama principal (primero lo q tiene la rama experimento y despues lo q tiene la principal).
   * Es una mala practica por que cambia la historia de donde arranco el branch experimento, pero es util si el cambio se hace en una rama local.
   * en la rama principal (main o master), si quieres mergear lo que tienes en experimento, despues de fusionarlo con master, se hace un git rebase experimento (primero se le hace rebase a la rama experimento y despues a la principal)
-  * 
 
+- Git Stash: Guardar cambios en memoria y recuperarlos después
+  * gitk -> abre la historia visualmente del repo
+  * cambiarse de rama sin guardar los cambios q se tienen en la actual por q no son definitivos
+  * se aplican cambios en un archivo por ejm en la rama master, y quieres hacer esos cambios en una rama aparte
+  * git stash -> se guarda en memoria (un lugar temporal) los cambios realizados en la rama actual y asi se puede cambiar de branch sin necesidad de hacer un commit
+  * git stash list -> para ver donde han sido guardados los cambios, el msj seria algo asi: stash@{0}: WIP on main: 0dbc3a5 notas sobre rebase (WIP significa work in progress)
+  * puedes cambiar de rama, hacer lo q vayas a hacer en las otras ramas, y cuando termines vuelves a la rama donde hiciste el Stash
+  * git stash pop -> se vuelven a visualizar los cambios que habias guardado anteriormente en esa rama con el stash
+  * si ya no quieres esos cambios, puedes descartarlos con ctrl + z, o tambien haciendole git checkout al archivo.
+  * se pueden guardar los cambios y guardarlos en una rama
+    + se hacen los cambios
+    + hacemos un git stash
+    + git stash branch nombre_rama -> esto crea automaticamente la rama y agrega los cambios que guardamos en esta rama
+    + se pueden hacer los commits en la nueva rama y todo el proceso de merge
+  * puede pasar que hayan cambios indeseados en un archivo o en una rama, con hacerle un git stash todos esos cambios se guardan el memoria y se vuelve al estado anterior
+  * git stash drop -> para borrar los cambios guardados en memoria
+
+- Git Clean: limpiar tu proyecto de archivos no deseados
+  * git clean --dry-run -> muestra en pantalla los archivos que va a borrar
+  * git clean -f -> se borran los archivos que se mostraron con el cambio anterior (elimina archivos.. no toma en cuenta carpetas)
+  * no va tomar en cuenta los archivos que tienes en el .gitignore
 
 
 
