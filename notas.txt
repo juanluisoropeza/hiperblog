@@ -254,7 +254,9 @@ para escribir texto en vim, presionamos Esc + i
     + esto va dar como resultado un conflicto, por q te traes una linea que es similar a la otra que ya fusionamos con main
     + en VSCode es sencillo ver el conflicto, te muestra lo que tienes en la rama main y lo q viene de la rama readme_mejorado, simplemente aceptamos ambos cambios en la opcion "Accept Both Changes", guardamos el archivo
     + hacemos un commit -am para guardar los cambios hechos en el conflict merge -> git commit -am "readme_mejorado"
-
+    + hacemos un pull del main remoto
+    + hacemos un push de los cambios
+  * Cherry-pick es una mala practica, lo mejor es hacer el curso de trabajo normal, con ramas y haciendo PR, pero es una herramienta para sumar al stack.
 
 
 
