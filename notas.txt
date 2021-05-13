@@ -242,6 +242,21 @@ para escribir texto en vim, presionamos Esc + i
   * git clean -f -> se borran los archivos que se mostraron con el cambio anterior (elimina archivos.. no toma en cuenta carpetas)
   * no va tomar en cuenta los archivos que tienes en el .gitignore
 
+- Git cherry-pick: traer commits viejos al head de un branch
+  * git log --oneline -> ver el historial de commits (en la rama donde se hayan creado los cambios)
+  * copiamos el hash del commit que queramos fusionar con la rama main o master
+  * hacemos git checkout para cambiar a la rama main o master, y ejecutamos -> git cherry-pick hash_copiado
+  * con esto traemos un commit viejo, a partir de su hash, a la rama master o main
+  * si hacemos git status, vemos q no tiene cambios por que todo queda comiteado
+  * si se ejecuta un git log --oneline, se ve que se agrego al master el commit que acabamos de ejecutar con el cherry-pick
+  * luego hacemos un pull para traernos lo que esta en el repositorio remoto, y posteriormente un push para subir los cambios, con este commit viejo fusionado a la rama main.
+  * luego facilmente, puedes hacer un merge con la rama que estabas trabajando si ya terminaste los cambios, en mi ejm, un merge en main a readme mejorado: git merge readme_mejorado
+    + esto va dar como resultado un conflicto, por q te traes una linea que es similar a la otra que ya fusionamos con main
+    + en VSCode es sencillo ver el conflicto, te muestra lo que tienes en la rama main y lo q viene de la rama readme_mejorado, simplemente aceptamos ambos cambios en la opcion "Accept Both Changes", guardamos el archivo
+    + hacemos un commit -am para guardar los cambios hechos en el conflict merge -> git commit -am "readme_mejorado"
+
+
+
 
 
 
