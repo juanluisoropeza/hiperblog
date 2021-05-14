@@ -268,16 +268,24 @@ para escribir texto en vim, presionamos Esc + i
 - Git Reset y Reflog: úsese en caso de emergencia 
   * Reflog no olvida nada, esta todo hasta lo eliminado que no aparece en el git log --oneline
   * con git reflog se ve todo (sale el hash y tambien el HEAD q es la posicion donde se hicieron cambios)
-  + para que funcione, buscas el head donde todo estaba correcto, lo copias.
-  + git reset (hay dos opciones --soft (te mantiene lo q tienes en staging osea lo q tienes en un add) o --hard (te resetea todo incluido el stage))
-  + ejecutamos git reset head_copiado_desde_reflog (hace un reset --soft por defecto)
-  + git status, muestra los cambios q se ejecutaron, por ejm si un archivo fue borrado, sale en rojo y con un deleted
-  + como queremos lo que estaba antes de hacer el add, tenemos que hacer un reset --hard
-  + hacemos un git reflog y buscamos el ultimo commit donde todo estaba bien, copiamos el hash
-  + git reset --hard hash_del_commit_copiado
-  + listo volvimos a ese punto del proyecto
-  + Es una mala practica, solo usarlo cuando algo se rompa.
+  * para que funcione, buscas el head donde todo estaba correcto, lo copias.
+  * git reset (hay dos opciones --soft (te mantiene lo q tienes en staging osea lo q tienes en un add) o --hard (te resetea todo incluido el stage))
+  * ejecutamos git reset head_copiado_desde_reflog (hace un reset --soft por defecto)
+  * git status, muestra los cambios q se ejecutaron, por ejm si un archivo fue borrado, sale en rojo y con un deleted
+  * como queremos lo que estaba antes de hacer el add, tenemos que hacer un reset --hard
+  * hacemos un git reflog y buscamos el ultimo commit donde todo estaba bien, copiamos el hash
+  * git reset --hard hash_del_commit_copiado
+  * listo volvimos a ese punto del proyecto
+  * Es una mala practica, solo usarlo cuando algo se rompa.
 
+- Buscar en archivos y commits de Git con Grep y log
+  * git grep texto_busqueda:
+    + por ejm si queremos buscar la palabra color, comunmente usado en css seria -> git grep color
+    + se puede usar -n y te dice la linea en que se uso, ejm: git grep -n color
+    + contar la cantidad de veces que una palabra se usa: git grep -c color
+    + para buscar etiquetas html debes agregarle comillas, ejm: git grep -c "<p>"
+    + para buscar en el historial de commits:
+      # ejm: git log -S -c "cabecera"
 
 
 
