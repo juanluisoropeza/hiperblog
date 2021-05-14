@@ -276,6 +276,7 @@ para escribir texto en vim, presionamos Esc + i
   + hacemos un git reflog y buscamos el ultimo commit donde todo estaba bien, copiamos el hash
   + git reset --hard hash_del_commit_copiado
   + listo volvimos a ese punto del proyecto
+  + Es una mala practica, solo usarlo cuando algo se rompa.
 
 
 
