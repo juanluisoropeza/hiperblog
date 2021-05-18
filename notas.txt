@@ -287,6 +287,15 @@ para escribir texto en vim, presionamos Esc + i
     + para buscar en el historial de commits:
       # ejm: git log -S -c "cabecera"
 
+- Comandos y recursos colaborativos en Git y GitHub
+  * Cuantos commits ha hecho cada miembro del equipo -> git shortlog -> -sn (las personas o usuarios q hicieron commits) -> --all (muestra todos los commits, incluso los borrados) -> --no-merges (no incluye los merges).
+  * Aplicar alias a un comando en especifico -> Ejm: git config --global alias.stats "shortlog -sn --all --no-merges"
+  * si queremos ver quien hizo que, como un recordatorio -> git blame nombre_archivo -> -c agrega el nro de las lineas
+    # por ejm: para ver quien modifico ciertas lineas de un archivo, usamos -> git blame css/estilos.css -L35, 53 -> asi vemos quien fue el ultimo en modificar de la linea 35 a la 53 en el archivo
+  * ver ramas remotas -> git branch -r -> git branch -a (se ven ramas locales y ramas remotas, las locales en blanco, remotas en rojo)
+  
+
+
 
 
 
